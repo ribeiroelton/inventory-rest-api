@@ -1,0 +1,15 @@
+spring:
+  main:
+    banner-mode: off
+  flyway:
+    enabled: true
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:tc:postgresql:12.9-alpine:///products
+    driver-class-name: org.testcontainers.jdbc.ContainerDatabaseDriver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format-sql: true

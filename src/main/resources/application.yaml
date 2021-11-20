@@ -1,0 +1,15 @@
+spring:
+  main:
+    banner-mode: off
+  flyway:
+    enabled: true
+  datasource:
+    username: postgres
+    password: postgres
+    url: jdbc:postgresql://localhost:55432/products
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    properties:
+      hibernate:
+        format-sql: true
