@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.net.URI;
 
 @RestController
 @RequestMapping("/v1/brands")
@@ -23,7 +22,7 @@ public class BrandsController {
     private BrandsService brandsService;
 
     @PostMapping()
-    ResponseEntity<BrandDtoOutput> saveBrand(@Valid @RequestBody BrandDtoInput input) throws TechnicalException {
+    public ResponseEntity<BrandDtoOutput> saveBrand(@Valid @RequestBody BrandDtoInput input) throws TechnicalException {
         BrandDtoOutput output = brandsService.saveBrand(input);
         return ResponseEntity.status(HttpStatus.CREATED).body(output);
     }

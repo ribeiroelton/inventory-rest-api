@@ -30,7 +30,7 @@ public class SuppliersControllerIntegrationTest {
     private Integer port;
 
     @Test
-    public void shouldCreateAndReturnASupplierWithId() throws Exception {
+    public void shouldCreateAndReturnASupplierWithId() {
         SupplierDtoInput input = SupplierDtoInput.builder()
                 .ie("123456789123")
                 .name("Samsung Vendor")
