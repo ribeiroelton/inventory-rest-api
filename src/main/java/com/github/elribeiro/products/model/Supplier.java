@@ -11,7 +11,6 @@ import java.util.List;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
 @Entity
 @Table(name = "suppliers")
 public class Supplier {
@@ -31,7 +30,7 @@ public class Supplier {
     @NotNull
     private String ie;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "supplier")
+    @OneToMany(mappedBy = "supplier", fetch = FetchType.LAZY)
     private List<Product> products;
 
 }

@@ -51,6 +51,6 @@ public class SuppliersServiceUnitTest {
         SupplierDtoOutput output = suppliersService.saveSupplier(input);
 
         Assertions.assertSame(input.getName(), output.getName());
-        Assertions.assertTrue(output.getId() == 1);
+        Assertions.assertSame(output.getId(), 1);
     }
 }
