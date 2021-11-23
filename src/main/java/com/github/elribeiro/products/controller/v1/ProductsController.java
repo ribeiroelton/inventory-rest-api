@@ -1,9 +1,9 @@
-package com.github.elribeiro.products.controller;
+package com.github.elribeiro.products.controller.v1;
 
-import com.github.elribeiro.products.dto.BrandDtoInput;
-import com.github.elribeiro.products.dto.BrandDtoOutput;
+import com.github.elribeiro.products.dto.ProductDtoInput;
+import com.github.elribeiro.products.dto.ProductDtoOutput;
 import com.github.elribeiro.products.exception.TechnicalException;
-import com.github.elribeiro.products.service.BrandsService;
+import com.github.elribeiro.products.service.ProductsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,18 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
-import java.net.URI;
 
 @RestController
-@RequestMapping("/v1/brands")
-public class BrandsController {
+@RequestMapping("/v1/products")
+public class ProductsController {
 
     @Autowired
-    private BrandsService brandsService;
+    ProductsService productsService;
 
-    @PostMapping()
-    ResponseEntity<BrandDtoOutput> saveBrand(@Valid @RequestBody BrandDtoInput input) throws TechnicalException {
-        BrandDtoOutput output = brandsService.saveBrand(input);
+    @PostMapping
+    ResponseEntity<ProductDtoOutput> saveProduct(@Valid @RequestBody ProductDtoInput input) throws TechnicalException {
+        ProductDtoOutput output = productsService.saveProduct(input);
         return ResponseEntity.status(HttpStatus.CREATED).body(output);
     }
 }

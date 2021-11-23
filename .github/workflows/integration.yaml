@@ -1,6 +1,6 @@
-name: CI
+name: integration
 
-on: [push]
+on: [pull_request]
 
 jobs:
   test:
@@ -12,5 +12,5 @@ jobs:
         with:
           java-version: '11'
           distribution: 'adopt'
-      - name: Test
-        run: ./gradlew clean test --info
+      - name: Integration Test
+        run: ./gradlew clean integrationTest --info

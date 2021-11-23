@@ -1,4 +1,4 @@
-package com.github.elribeiro.products.controller;
+package com.github.elribeiro.products.controller.v1;
 
 import com.github.elribeiro.products.dto.SupplierDtoInput;
 import com.github.elribeiro.products.dto.SupplierDtoOutput;

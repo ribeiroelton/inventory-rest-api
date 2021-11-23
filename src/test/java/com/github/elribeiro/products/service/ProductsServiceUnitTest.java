@@ -10,6 +10,7 @@ import com.github.elribeiro.products.repository.BrandRepository;
 import com.github.elribeiro.products.repository.ProductRepository;
 import com.github.elribeiro.products.repository.SupplierRepository;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -25,6 +26,7 @@ import java.util.Optional;
 import static org.mockito.Mockito.times;
 
 @ActiveProfiles("unit")
+@Tag("unitTest")
 @ExtendWith(MockitoExtension.class)
 public class ProductsServiceUnitTest {
 
