@@ -8,6 +8,7 @@ import com.github.elribeiro.products.model.Supplier;
 import com.github.elribeiro.products.repository.SupplierRepository;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -17,6 +18,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.context.ActiveProfiles;
 
 @ActiveProfiles("unit")
+@Tag("unitTest")
 @ExtendWith(MockitoExtension.class)
 public class SuppliersServiceUnitTest {
 

@@ -17,20 +17,12 @@ CREATE INDEX idx_brands_name ON brands(name);
 
 CREATE TABLE IF NOT EXISTS products(
     id SERIAL PRIMARY KEY,
-    supplier_id INT NOT NULL,
-    brand_id INT NOT NULL,
+    supplier_id INT NOT NULL REFERENCES suppliers(id) ON DELETE RESTRICT,
+    brand_id INT NOT NULL REFERENCES brands(id)  ON DELETE RESTRICT,
     name VARCHAR(50) UNIQUE NOT NULL,
     description VARCHAR(200) NULL,
     unit_price DECIMAL(10,2) NOT NULL,
-    photo_url VARCHAR(300) NULL,
-   CONSTRAINT fk_supplier
-      FOREIGN KEY(supplier_id)
-      REFERENCES suppliers(id)
-      ON DELETE RESTRICT,
-   CONSTRAINT fk_brand
-      FOREIGN KEY(brand_id)
-      REFERENCES brands(id)
-      ON DELETE RESTRICT
+    photo_url VARCHAR(300) NULL
 );
 
 CREATE INDEX idx_products_name ON products(name);
