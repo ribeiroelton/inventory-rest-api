@@ -33,7 +33,7 @@ public class ProductsControllerIntegrationTest {
 
     @Test
     @Sql("/products-controller.sql")
-    public void shouldSaveAndReturnAProductWithId() throws Exception {
+    public void shouldSaveAndReturnAProductWithId() {
         ProductDtoInput input = ProductDtoInput.builder()
                 .name("Samsung N8")
                 .brandId(1)

@@ -80,7 +80,7 @@ public class ProductsServiceUnitTest {
         ProductDtoOutput output = productsService.saveProduct(input);
 
         Assertions.assertSame(input.getName(), output.getName());
-        Assertions.assertTrue(output.getId() == 1);
+        Assertions.assertSame(output.getId(), 1);
 
         Mockito.verify(brandRepository, times(1)).findById(Mockito.anyInt());
         Mockito.verify(productRepository, times(1)).save(Mockito.any(Product.class));
@@ -89,7 +89,7 @@ public class ProductsServiceUnitTest {
     }
 
     @Test
-    public void shouldNotSaveAndReturnProductWithNonExistingBrandId() throws TechnicalException {
+    public void shouldNotSaveAndReturnProductWithNonExistingBrandId() {
         ProductDtoInput input = ProductDtoInput.builder()
                 .name("Samsung N8")
                 .brandId(2)
@@ -104,7 +104,7 @@ public class ProductsServiceUnitTest {
     }
 
     @Test
-    public void shouldNotSaveAndReturnProductWithNonExistingSupplierId() throws TechnicalException {
+    public void shouldNotSaveAndReturnProductWithNonExistingSupplierId() {
         ProductDtoInput input = ProductDtoInput.builder()
                 .name("Samsung N8")
                 .brandId(1)
